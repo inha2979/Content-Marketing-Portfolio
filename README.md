@@ -2,4 +2,4 @@
 
 Inha Kim · Content Marketing
 
-https://inha2979.github.io/content-marketing-portfolio/
+https://inha2979.github.io/Content-Marketing-Portfolio/
