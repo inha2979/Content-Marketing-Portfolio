@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="김인하 콘텐츠 마케팅 포트폴리오: 도서 홍보 쇼츠, 카드뉴스, SNS 이벤트, 북마켓 현장 홍보">
+<meta property="og:title" content="Inha Kim · Content Marketing">
+<meta property="og:description" content="책 한 권의 메시지를 피드 한 장으로 옮깁니다">
+<meta property="og:image" content="img/cn-jaksaengdo-halloween-01.webp">
+<title>Inha Kim · Content Marketing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Gowun+Dodum&display=swap">
+<style>
+html,body{margin:0}
+[hidden]{display:none!important}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+/* Layout: a content board. Each work = a spread (story left, the real output right: 4:5 feed, 9:16 short, booth photos). Highlighter yellow marks the message, ocean blue marks the format. */
+:root{
+  --bg:#FBFAF6;--surface:#FFFFFF;--t-sky:#E2F0FF;--t-lav:#EEE7FF;--t-mint:#E2F5EE;--t-peach:#FFEEDD;--t-butter:#FFF5CC;--t-pink:#FFE8EF;--coral:#FF7A59;--ink:#15202B;--muted:#5A6873;--line:#CFD8D6;
+  --mark:#FFE14D;--blue:#1F56E0;--blue-soft:#DCE6FF;
+  --acorn:#9A5B2E;--leaf1:#E08A3C;--leaf2:#C9542F;--leaf3:#D9A93A;--forest:#F6E7CF;
+  --good:#23804D;
+  --f-display:"Hahmlet","Nanum Myeongjo",Georgia,serif;
+  --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --f-hand:"Gowun Dodum","IBM Plex Sans KR","Apple SD Gothic Neo",sans-serif;
+  --shadow:0 1px 0 rgba(21,32,43,.06),0 10px 30px -12px rgba(21,32,43,.28);
+  --hl:rgba(255,225,77,1);
+}
+:root,:root[data-theme="dark"]{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;word-break:keep-all}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.25;margin:0}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.04em}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hl{background:linear-gradient(transparent 60%,var(--hl) 60%) no-repeat;background-size:0% 100%;animation:sweep 1.1s .5s cubic-bezier(.6,.1,.2,1) forwards;padding:0 .08em}
+@keyframes sweep{to{background-size:100% 100%}}
+.snap{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-family:var(--f-display);font-weight:800;font-size:17px;text-decoration:none}
+.brand small{font-family:var(--f-mono);font-weight:400;font-size:11px;color:var(--muted);margin-left:8px;letter-spacing:.1em}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav ul a{font-size:13.5px;text-decoration:none;padding:6px 10px;border-radius:8px;color:var(--muted)}
+.nav ul a:hover,.nav ul a.on{color:var(--ink);background:var(--surface)}
+@media (max-width:640px){.nav ul{display:none}}
+
+/* hero */
+.hero{padding-block:60px 0;overflow-x:clip;position:relative;isolation:isolate}
+.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.75;animation:drift 14s ease-in-out infinite alternate}
+.hero::before{width:520px;height:520px;right:-120px;top:-80px;background:radial-gradient(circle,#BFE0FF,transparent 70%)}
+.hero::after{width:460px;height:460px;left:-160px;top:200px;background:radial-gradient(circle,#FFE7A3,transparent 70%);animation-delay:-7s}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.08)}}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(34px,5.4vw,62px);font-weight:800;letter-spacing:-.02em;margin-top:18px}
+.hero .lede{margin-top:22px;max-width:34em;color:var(--muted);font-size:17px}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.roles span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 14px;font-size:13.5px}
+.hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:14.5px;text-decoration:none;padding:11px 20px;border-radius:12px;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);transition:transform .2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.stage{position:relative;height:460px;perspective:1100px;transition:transform .4s ease-out;transform-style:preserve-3d}
+.feed{position:absolute;width:255px;max-width:62%;aspect-ratio:4/5;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:transform .8s cubic-bezier(.2,.8,.2,1);left:50%;top:50%;background:var(--surface)}
+.feed img{width:100%;height:100%;object-fit:cover}
+.phone{position:absolute;right:0;bottom:0;width:150px;aspect-ratio:9/16;border-radius:22px;background:#0B1B2E;border:5px solid #0A0F14;overflow:hidden;box-shadow:var(--shadow);z-index:6;animation:bob 5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(1.5deg)}}
+.sea{position:absolute;inset:0;background:linear-gradient(#2C7DD6,#0B2C5A)}
+.sea .wave{position:absolute;left:-50%;width:200%;height:40px;top:18%;background:radial-gradient(circle at 25px -8px,transparent 26px,rgba(255,255,255,.18) 27px) 0 0/50px 40px repeat-x;animation:wave 4s linear infinite}
+@keyframes wave{to{transform:translateX(50px)}}
+.bubble{position:absolute;bottom:-12px;border-radius:50%;border:1.5px solid rgba(255,255,255,.7);animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-320px) translateX(10px);opacity:0}}
+.fish{position:absolute;width:30px;height:14px;border-radius:50%;background:#FFB347;animation:swim 7s linear infinite}
+.fish::after{content:"";position:absolute;right:-10px;top:1px;border-left:12px solid #FFB347;border-top:6px solid transparent;border-bottom:6px solid transparent}
+@keyframes swim{from{transform:translateX(160px)}to{transform:translateX(-60px)}}
+.phone video{width:100%;height:100%;object-fit:cover}
+.reel-side{display:grid;gap:4px;align-content:center;justify-items:start}
+.phone .cap{position:absolute;left:8px;right:8px;bottom:12px;color:#fff;font-size:11px;line-height:1.4}
+.phone .cap b{display:block;font-family:var(--f-display);font-size:13px}
+.phone .rec{position:absolute;top:8px;left:8px;font-family:var(--f-mono);font-size:9px;color:#fff;background:rgba(0,0,0,.35);border-radius:6px;padding:1px 6px}
+.sticky-note{position:absolute;left:0;bottom:6px;z-index:7;font-family:var(--f-hand);font-size:15px;font-weight:700;line-height:1.45;background:var(--mark);color:#2B2508;padding:10px 14px;transform:rotate(-4deg);box-shadow:var(--shadow);max-width:190px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:40px}
+.stat{padding:22px 20px;border-right:1px solid var(--line);min-width:0}
+.stat:nth-child(1) .n{color:#1F56E0}.stat:nth-child(2) .n{color:#7A4DE0}.stat:nth-child(3) .n{color:#E0602F}.stat:nth-child(4) .n{color:#1E8A5E}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,3.6vw,42px);line-height:1;font-variant-numeric:tabular-nums}
+.stat .n small{font-size:.5em;margin-left:2px}
+.stat p{font-size:13.5px;margin-top:8px}
+.stat .snap{display:block;margin-top:4px;font-size:10.5px}
+.marquee{overflow:hidden;padding-block:14px;white-space:nowrap;background:var(--blue);color:#fff}
+.marquee .track{display:inline-flex;gap:36px;animation:mq 34s linear infinite;font-family:var(--f-display);font-size:20px;font-weight:600}
+.marquee .track span::after{content:"✳";color:var(--mark);margin-left:36px;font-size:14px;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* works */
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;padding-block:72px 28px;flex-wrap:wrap}
+.section-head h2{font-size:clamp(28px,3.6vw,40px);font-weight:800}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button,.tabs button{font:inherit;font-size:13.5px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;transition:background .2s,color .2s}
+.filters button[aria-pressed="true"],.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.work{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;padding:48px;margin-bottom:24px;border-radius:28px;background:var(--tint,var(--surface));align-items:start}
+.work .idx{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.chip{font-size:12px;font-weight:600;border-radius:6px;padding:2px 9px;background:var(--blue-soft);color:var(--blue)}
+.chip.state{background:transparent;border:1px solid var(--good);color:var(--good);font-weight:500}
+.work h3{font-size:clamp(24px,2.8vw,32px);font-weight:800;margin-top:14px}
+.work .sub{margin-top:6px;color:var(--muted);font-size:14px}
+.work .goal{margin-top:20px;font-size:16.5px;max-width:34em}
+.block{margin-top:26px}
+.block h4{margin:0 0 10px;font-family:var(--f-body);font-size:13px;letter-spacing:0;color:var(--muted);font-weight:600}
+#shortName{font-family:var(--f-display);font-size:17px;color:var(--ink);font-weight:600}
+.tasks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tasks li{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:15px}
+.tasks li::before{content:"";width:12px;height:12px;margin-top:7px;border-radius:3px;border:1.5px solid var(--blue);background:linear-gradient(var(--blue),var(--blue)) center/0 0 no-repeat;transition:background-size .3s}
+.tasks li:hover::before{background-size:100% 100%}
+.skills{display:flex;flex-wrap:wrap;gap:6px}
+.skills span{font-size:13px;padding:3px 11px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px;margin-top:26px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
+.kpi b{display:block;font-family:var(--f-display);font-size:28px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:var(--muted)}
+.kpi.hot{background:var(--mark);border-color:var(--mark);color:#1E1A06}
+.kpi.hot span{color:#4A4310}
+.fine{margin-top:10px;font-size:12.5px;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.links a{font-size:14px;font-weight:600;color:var(--blue);text-decoration:none;border-bottom:1.5px solid currentColor}
+.note{font-family:var(--f-hand);font-size:16px;line-height:1.65;margin-top:22px;padding-left:14px;border-left:3px solid var(--mark)}
+.visual{position:sticky;top:90px;min-width:0}
+.work.rev>.visual{order:-1}
+.work.wide{grid-template-columns:1fr}
+.work.wide .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+.work.lean{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.work.lean.rev{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.ba{display:grid;grid-template-columns:minmax(0,1.75fr) auto minmax(0,1fr);gap:18px;align-items:center}
+.ba figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px}
+.ba img{border-radius:10px;width:100%}
+.ba figcaption{font-size:13px;color:var(--muted);margin-top:8px;padding-inline:4px}
+.ba figcaption b{color:var(--ink)}
+.ba .to{font-size:28px;color:var(--blue)}
+.compact{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;padding:36px;margin-block:0 56px;border-radius:28px;background:var(--t-pink)}
+.compact h3{font-size:clamp(22px,2.4vw,28px);font-weight:800;margin-top:12px}
+.compact .goal{margin-top:12px;font-size:15.5px}
+.compact .vids a{background:var(--surface)}
+.compact .hook .before{background:var(--surface)}
+.vcap{margin-top:12px;text-align:center;font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+@supports (animation-timeline:view()){@media (prefers-reduced-motion:no-preference){
+  .work .visual{animation:lift linear both;animation-timeline:view();animation-range:entry 0% entry 60%}}}
+@keyframes lift{from{transform:translateY(40px) rotate(-1.5deg)}to{transform:none}}
+.zoom{cursor:zoom-in}
+
+/* 01 shorts */
+.reel{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+.phone.big{position:relative;right:auto;bottom:auto;width:220px;max-width:46vw;animation:none;border-width:7px;border-radius:30px}
+.beats{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.beats li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .2s,transform .2s}
+.beats li .t{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.beats li b{display:block;font-size:15px}
+.beats li.on{border-color:var(--blue);transform:translateX(-4px)}
+.scene{position:absolute;inset:0;opacity:0;transition:opacity .5s;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;text-align:center;padding:16px}
+.scene.on{opacity:1}
+.scene .big{font-family:var(--f-display);font-size:22px;font-weight:800;line-height:1.25;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.dancer{display:flex;gap:6px;margin-bottom:10px}
+.dancer i{display:block;width:22px;height:22px;border-radius:50% 50% 40% 40%;animation:dance .6s ease-in-out infinite alternate}
+.dancer i:nth-child(1){background:#FFB347}.dancer i:nth-child(2){background:#7FE0D0;animation-delay:.15s}.dancer i:nth-child(3){background:#FF8FA3;animation-delay:.3s}.dancer i:nth-child(4){background:#FFE14D;animation-delay:.45s}
+@keyframes dance{from{transform:translateY(0) rotate(-12deg)}to{transform:translateY(-14px) rotate(12deg)}}
+.book{width:70px;height:90px;border-radius:4px 8px 8px 4px;background:#FFE14D;color:#1A1A1A;font-family:var(--f-display);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;box-shadow:inset 6px 0 0 rgba(0,0,0,.15);margin-bottom:10px}
+.meter{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.meter .bar{height:10px;border-radius:999px;background:var(--line);overflow:hidden;margin-top:8px}
+.meter .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--mark));border-radius:999px;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.meter .row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+
+/* 02 card viewer */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{font-size:12.5px;padding:4px 12px}
+.viewer{position:relative}
+.slides{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:16px;background:var(--surface)}
+.slides::-webkit-scrollbar{display:none}
+.slides img{flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:center;border-radius:16px}
+.badge{position:absolute;top:12px;left:12px;z-index:2;background:var(--mark);color:#1E1A06;font-weight:700;font-size:13px;border-radius:999px;padding:3px 12px;box-shadow:var(--shadow)}
+.counter{position:absolute;top:12px;right:12px;z-index:2;background:rgba(0,0,0,.55);color:#fff;font-family:var(--f-mono);font-size:12px;border-radius:999px;padding:2px 10px}
+.cnav{display:flex;align-items:center;justify-content:space-between;margin-top:12px;gap:12px}
+.dots{display:flex;gap:6px;flex-wrap:wrap}
+.dots button{width:8px;height:8px;border-radius:999px;border:0;background:var(--line);padding:0;cursor:pointer;transition:width .3s,background .3s}
+.dots button.on{width:22px;background:var(--blue)}
+.arrows{display:flex;gap:8px}
+.arrows button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:16px}
+.settitle{font-family:var(--f-hand);font-size:15px;line-height:1.6;color:var(--muted);margin-top:8px;min-height:1.6em}
+
+/* before/after */
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface);margin-bottom:14px;flex-wrap:wrap}
+.toggle button{font:inherit;font-size:13px;border:0;background:transparent;color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.stack{display:grid;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--line)}
+.stack>figure{grid-area:1/1;margin:0;display:flex;align-items:center;justify-content:center;transition:opacity .45s,transform .45s;padding:10px}
+.stack>figure.off{display:none}
+.stack>figure{animation:fadeup .4s ease-out}
+@keyframes fadeup{from{opacity:0;transform:translateY(8px)}}
+.stack img{border-radius:10px;max-height:640px;width:auto}
+.lean .stack img{width:100%;max-height:none}
+.lean .stack img.tall{width:auto;max-height:560px}
+.role-tag{display:inline-block;margin-top:10px;font-size:12.5px;color:var(--muted)}
+
+/* acorn game */
+.play{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;align-items:center;padding:32px;border-radius:28px;background:var(--surface);border:2px dashed #F0B57A;margin-bottom:24px}
+.play h4{font-family:var(--f-display);font-size:24px;margin:6px 0 10px}
+.play p{font-size:15px;color:var(--muted)}
+.forest{position:relative;aspect-ratio:16/10;border-radius:16px;background:var(--forest);overflow:hidden;width:100%}
+.leaf{position:absolute;width:46px;height:30px;border-radius:0 100% 0 100%;pointer-events:none;opacity:.94}
+.acorn{position:absolute;width:30px;height:38px;border:0;padding:0;background:none;cursor:pointer;z-index:2}
+.acorn::before{content:"";position:absolute;left:3px;top:0;width:24px;height:14px;border-radius:12px 12px 4px 4px;background:#6B3E1E;background-image:repeating-linear-gradient(45deg,transparent 0 3px,rgba(255,255,255,.12) 3px 5px)}
+.acorn::after{content:"";position:absolute;left:5px;top:11px;width:20px;height:25px;border-radius:40% 40% 50% 50%/30% 30% 70% 70%;background:var(--acorn)}
+.acorn.found{animation:found .6s ease-out forwards;z-index:4}
+@keyframes found{50%{transform:scale(1.6) rotate(15deg)}to{transform:scale(1.25)}}
+.acorn.found::after{box-shadow:0 0 0 4px var(--mark)}
+.hud{position:absolute;left:12px;right:12px;top:12px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:8px;background:color-mix(in srgb,var(--surface) 90%,transparent);border-radius:12px;padding:8px 12px;font-size:13.5px}
+.hud b{font-family:var(--f-display);font-size:18px;font-variant-numeric:tabular-nums}
+.hud button{font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer}
+.win{position:absolute;inset:auto 12px 12px;z-index:5;background:var(--ink);color:var(--bg);border-radius:12px;padding:12px 14px;font-size:14px;transform:translateY(160%);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.win.show{transform:none}
+
+/* ACC */
+.mosaic{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:92px;gap:8px}
+.mosaic>*{border-radius:12px;overflow:hidden;background:var(--surface);position:relative}
+.mosaic img,.mosaic video{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.mosaic>*:hover img{transform:scale(1.05)}
+.m1{grid-column:span 4;grid-row:span 3}.m2{grid-column:span 2;grid-row:span 3}
+.m3,.m4,.m5{grid-column:span 2;grid-row:span 2}
+.m6{grid-column:span 3;grid-row:span 2}.m7{grid-column:span 3;grid-row:span 2}
+.mosaic figcaption{position:absolute;left:8px;bottom:8px;font-size:11.5px;background:rgba(0,0,0,.6);color:#fff;border-radius:6px;padding:1px 8px}
+.tl{position:relative;display:grid;gap:12px;padding-left:28px;margin-top:26px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:repeating-linear-gradient(var(--line) 0 6px,transparent 6px 11px)}
+.tl .pt{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:14.5px}
+.tl .pt::before{content:"";position:absolute;left:-25px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2.5px solid var(--blue)}
+.tl .pt.live::before{background:var(--mark);border-color:var(--ink);animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,225,77,.8)}80%,100%{box-shadow:0 0 0 12px rgba(255,225,77,0)}}
+.tl .when{font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:.1em}
+.tl b{display:block;font-size:15px;margin:1px 0 2px}
+
+/* infobyte */
+.script{background:#101820;color:#E3EAF0;border-radius:18px;padding:18px;font-size:14px;overflow:hidden}
+.script .bar{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:#8FA3B3;margin-bottom:12px}
+.trk{display:grid;grid-template-columns:62px 1fr;gap:10px;margin-bottom:8px}
+.trk>span{font-family:var(--f-mono);font-size:11px;color:#8FA3B3;padding-top:8px}
+.clips{display:flex;gap:4px;min-width:0}
+.clip{border-radius:8px;padding:7px 10px;font-size:12.5px;line-height:1.35;min-width:0}
+.c1{background:#FF8C6B;color:#2A0E05;flex:1}.c2{background:#7EA3FF;color:#08163A;flex:2.2}.c3{background:#FFE14D;color:#1E1A06;flex:1}
+.c-sub{background:#24323F;color:#D6E1EA;flex:1}
+.playhead{position:relative;height:3px;background:#24323F;border-radius:2px;margin:14px 0 2px 72px}
+.playhead i{position:absolute;top:-5px;width:2px;height:13px;background:#fff;left:0;animation:play 8s linear infinite}
+@keyframes play{to{left:100%}}
+.hook{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-top:16px}
+.hook div{border-radius:14px;padding:14px;font-size:14.5px;min-width:0}
+.hook .before{background:var(--surface);border:1px dashed var(--line);color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(200,60,40,.6)}
+.hook .after{background:var(--mark);color:#1E1A06;font-weight:700}
+.hook small{display:block;font-family:var(--f-mono);font-size:10.5px;font-weight:400;text-decoration:none;margin-bottom:4px;opacity:.75}
+.hook .arrow{font-size:20px;color:var(--blue)}
+.vids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+.vids a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;transition:transform .2s,border-color .2s}
+.vids a:hover{transform:translateY(-3px);border-color:var(--blue)}
+.vids b{display:block;font-family:var(--f-display);font-size:22px;font-variant-numeric:tabular-nums}
+.vids span{font-size:12.5px;color:var(--muted)}
+.ops{margin-top:26px;background:var(--surface);border:1px dashed var(--line);border-radius:14px;padding:16px;font-size:14px;color:var(--muted)}
+.ops b{color:var(--ink)}
+
+/* process / about / footer */
+.process{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--surface)}
+.step{padding:22px 18px;border-right:1px solid var(--line);transition:background .25s}
+.step:last-child{border-right:0}
+.step:hover{background:var(--blue-soft)}
+.step .no{font-family:var(--f-mono);font-size:11px;color:#fff;background:var(--blue);border-radius:999px;padding:1px 9px}
+.step:nth-child(2) .no{background:#7A4DE0}.step:nth-child(3) .no{background:#1E8A5E}.step:nth-child(4) .no{background:#E0602F}.step:nth-child(5) .no{background:#D6407A}.step:nth-child(6) .no{background:#C79A00}
+.step b{display:block;font-family:var(--f-display);font-size:17px;margin:8px 0 6px}
+.step p{font-size:13.5px;color:var(--muted)}
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;padding-bottom:72px}
+.about p.big{font-family:var(--f-display);font-size:clamp(20px,2.3vw,25px);line-height:1.6}
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.comp div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:transform .25s}
+.comp div:nth-child(1){background:var(--t-sky);border-color:transparent}.comp div:nth-child(2){background:var(--t-lav);border-color:transparent}.comp div:nth-child(3){background:var(--t-mint);border-color:transparent}.comp div:nth-child(4){background:var(--t-peach);border-color:transparent}
+.comp div:hover{transform:translateY(-3px)}
+.comp b{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--blue);display:block;margin-bottom:6px}
+.comp p{font-size:14.5px}
+.bg-strip{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:13.5px;color:var(--muted)}
+footer{background:#15202B;color:#F2F5F7;padding-block:56px 72px}
+footer .eyebrow{color:#9FB0BF}
+footer .mail code{background:#22303D;border-color:#33465A;color:#fff}
+footer .mail button{background:var(--mark);color:#1E1A06;border-color:var(--mark)}
+footer .contact .row a{border-color:var(--mark)}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end}
+footer h2{font-size:clamp(26px,3.4vw,40px);font-weight:800}
+.contact{display:grid;gap:10px;font-size:15px}
+.mail{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mail code{font-family:var(--f-mono);font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px 10px;user-select:all}
+.mail button{font:inherit;font-size:13px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:8px;padding:4px 12px;cursor:pointer}
+.contact .row{display:flex;gap:16px;flex-wrap:wrap}
+.contact .row a{font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--blue)}
+
+/* lightbox */
+.lb[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(8,12,16,.88);display:flex;align-items:center;justify-content:center;padding:max(20px,env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));cursor:zoom-out;animation:fade .25s}
+.lb img{max-height:100%;max-width:100%;border-radius:10px;object-fit:contain}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:#111;font-size:18px;cursor:pointer}
+@keyframes fade{from{opacity:0}}
+
+@media (max-width:900px){
+  .hero-grid,.work,.work.lean,.work.lean.rev,.about,.play,footer .wrap,.work.wide .head,.compact{grid-template-columns:1fr;gap:32px}
+  .work.rev>.visual{order:0}
+  .ba{grid-template-columns:1fr}.ba .to{transform:rotate(90deg);justify-self:center}
+  .compact{padding:22px}
+  .work{padding:24px 20px;border-radius:22px}
+  .visual{position:static}
+  .process{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .step{border-bottom:1px solid var(--line)}
+  .step:nth-child(2n){border-right:0}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:520px){
+  .hero{padding-block:36px 0}
+  .stage{height:360px}
+  .feed{width:160px;max-width:none}
+  .phone{width:118px}
+  .reel{grid-template-columns:1fr;justify-items:center}
+  .beats{width:100%}
+  .comp{grid-template-columns:1fr}
+  .vids{grid-template-columns:1fr}
+  .hook{grid-template-columns:1fr}.hook .arrow{transform:rotate(90deg);justify-self:center}
+  .mosaic{grid-auto-rows:70px}
+  .play{padding:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hl{background-size:100% 100%}
+}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="섹션 이동">
+  <div class="wrap">
+    <a class="brand" href="#top">김인하<small>CONTENT MARKETING</small></a>
+    <ul>
+      <li><a href="#works">작업</a></li>
+      <li><a href="#process">일하는 방식</a></li>
+      <li><a href="#about">소개</a></li>
+      <li><a href="#contact">연락처</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Content Marketing Portfolio · 2026</div>
+      <h1>책 한 권의 메시지를<br><span class="hl">피드 한 장</span>으로 옮깁니다</h1>
+      <p class="lede">이은콘텐츠 인턴으로 도서·교육 브랜드의 SNS 콘텐츠를 만들었습니다. 카드뉴스는 정보 흐름과 가독성으로, 숏폼은 첫 장면의 흥미와 리듬으로 설계했습니다. 기획부터 게시, 그리고 숫자로 돌아보는 것까지 담았습니다.</p>
+      <div class="roles"><span>SNS 콘텐츠 기획</span><span>숏폼 제작</span><span>카드뉴스</span><span>디자인 협업</span><span>이벤트·현장</span></div>
+      <div class="hero-cta">
+        <a class="btn" href="#works">작업 보기 ↓</a>
+        <a class="btn ghost" href="https://youtube.com/shorts/mu23QPKGyzs" target="_blank" rel="noopener">대표 쇼츠 재생 ↗</a>
+      </div>
+    </div>
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="feed"><img src="img/cn-hiking-01-01.webp" alt=""></div>
+      <div class="feed"><img src="img/cn-ai-ad-01-01.webp" alt=""></div>
+      <div class="feed"><img src="img/mt-final-01.webp" alt=""></div>
+      <div class="feed"><img src="img/cn-chuseok-01.webp" alt=""></div>
+      <div class="phone"><video src="vid/short-bukangi.mp4" poster="vid/short-bukangi.jpg" muted loop playsinline autoplay></video><span class="rec">● SHORTS</span></div>
+      <div class="sticky-note">첫 장면에서 멈추게,<br>마지막 장에서 책으로</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="n" data-to="1.1" data-dec="1">1.1<small>K</small></div><p>이은북 쇼츠 조회수</p><span class="snap">게시 약 21시간 · 10.21 기준</span></div>
+      <div class="stat"><div class="n" data-to="101.3" data-dec="1">101.3<small>%</small></div><p>평균 시청 비율</p><span class="snap">같은 쇼츠 · YouTube Studio</span></div>
+      <div class="stat"><div class="n" data-to="1160">1,160</div><p>ACC 사전 홍보 게시물 조회</p><span class="snap">게시물 4개 합산</span></div>
+      <div class="stat"><div class="n" data-to="120">120<small>권</small></div><p>ACC 북마켓 대표 도서 완판</p><span class="snap">부스 팀 성과</span></div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="track"><span>타깃 관점의 메시지 설계</span><span>카드별 스토리 구성</span><span>숏폼 연출 · 자막</span><span>디자이너 핸드오프</span><span>SNS 이벤트 기획</span><span>고객 후기 큐레이션</span><span>손그림 현장 사인</span><span>타깃 관점의 메시지 설계</span><span>카드별 스토리 구성</span><span>숏폼 연출 · 자막</span><span>디자이너 핸드오프</span><span>SNS 이벤트 기획</span><span>고객 후기 큐레이션</span><span>손그림 현장 사인</span></div>
+  </div>
+</header>
+
+<main style="overflow-x:clip">
+<section class="wrap" id="works">
+  <div class="section-head">
+    <div><div class="eyebrow">Selected Works</div><h2>대표 작업</h2></div>
+    <div class="filters" role="group" aria-label="작업 유형 필터">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">전체</button>
+      <button type="button" id="f-short" data-f="short" aria-pressed="false">숏폼</button>
+      <button type="button" id="f-card" data-f="card" aria-pressed="false">카드뉴스</button>
+      <button type="button" id="f-event" data-f="event" aria-pressed="false">이벤트·현장</button>
+    </div>
+  </div>
+
+  <!-- 01 -->
+  <article class="work" data-type="short" style="--tint:var(--t-sky)">
+    <div>
+      <div class="idx"><span class="mono">01</span><span class="chip">숏폼</span><span class="chip state">3편 제작 · 2편 게시</span></div>
+      <h3>책 속 캐릭터가 주인공인 도서 홍보 쇼츠</h3>
+      <p class="sub">이은북 · 『바다생물도감』 · 『작은생물도감』 · 2026년 10월</p>
+      <p class="goal">도서 홍보 메시지를 짧고 친근한 캐릭터 영상에 녹여, 책을 모르는 사람도 먼저 영상에 빠지게 만들었습니다. 책 일러스트 속 동물들이 춤추고 모이는 장면으로 시작해, 마지막 장면에서 책 표지로 연결하는 흐름을 세 편에 똑같이 썼습니다.</p>
+      <div class="block"><h4>담당한 일</h4>
+        <ul class="tasks">
+          <li>책 캐릭터와 생물 소재를 중심으로 영상 콘셉트 구상</li>
+          <li>캐릭터들이 함께 춤추는 연출과 장면 흐름 구성</li>
+          <li>첫 화면 훅 자막과 마지막 도서 연결 카피 작성</li>
+          <li>편집과 게시, 피드백 반영 수정</li>
+        </ul>
+      </div>
+      <div class="block"><h4 id="shortName">『바다생물도감』 · 부캉이가 집에 안 가는 이유</h4>
+        <div class="kpis" id="shortKpis"></div>
+        <p class="fine" id="shortFine"></p>
+        <div class="links" id="shortLink"></div>
+      </div>
+      <p class="note">기획 포인트: 책 속 소재를 영상의 주인공으로 삼아 먼저 흥미를 끌고, 끝에서 도서와 연결했다.</p>
+    </div>
+    <div class="visual">
+      <div class="tabs" id="shortTabs" role="group" aria-label="쇼츠 선택">
+        <button type="button" id="sh-0" data-i="0" aria-pressed="true">부캉이 · 바다</button>
+        <button type="button" id="sh-1" data-i="1" aria-pressed="false">햄스터 · 작은</button>
+        <button type="button" id="sh-2" data-i="2" aria-pressed="false">프레리도그 · 작은</button>
+      </div>
+      <div class="reel">
+        <div class="phone big"><video id="shortVid" src="vid/short-bukangi.mp4" poster="vid/short-bukangi.jpg" muted loop playsinline autoplay></video><span class="rec" id="shortRec">● 0:30</span></div>
+        <div class="reel-side">
+          <button type="button" class="btn ghost" id="soundBtn">🔈 소리 켜기</button>
+          <p class="snap" style="margin-top:10px">실제 게시 영상 원본 · 9:16</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 02 -->
+  <article class="work rev" data-type="card" style="--tint:var(--t-lav)">
+    <div>
+      <div class="idx"><span class="mono">02</span><span class="chip">카드뉴스</span><span class="chip state">9세트</span></div>
+      <h3>이은북 도서 홍보 카드뉴스</h3>
+      <p class="sub">이은북 인스타그램 · 2026년 9–11월</p>
+      <p class="goal">책의 핵심 내용을 SNS에서 멈춰 읽게 되는 질문과 이야기로 바꿨습니다. 시선을 잡는 표지, 정보를 담은 중간 장, 책 소개와 행동 유도로 끝나는 구조를 반복해서 다듬었습니다.</p>
+      <div class="block"><h4>담당한 일</h4>
+        <ul class="tasks">
+          <li>도서별 독자 훅을 정하고 장별 서사 구성</li>
+          <li>슬라이드별 카피와 정보량 조정, 게시용 캡션 작성</li>
+          <li>배경·캐릭터·정보 상자 등 시각 요소 배치와 피드백 수정</li>
+          <li>할로윈·빼빼로데이 같은 시즌 이슈에 도서 캐릭터를 연결</li>
+          <li>『AI 광고 콘텐츠 제작법』·AI 안전 주제는 2편 연재로 구성</li>
+        </ul>
+      </div>
+      <div class="kpis">
+        <div class="kpi hot"><b>206</b><span>『대체 등산은 왜 하는 건데』 1편 조회</span></div>
+        <div class="kpi hot"><b>191</b><span>AI 영상 제작 편 조회</span></div>
+      </div>
+      <p class="fine">인스타그램 게시물 조회수, 2026.10.14 기준. 순 도달 수와는 다름.</p>
+      <div class="block"><h4>보여주는 역량</h4><div class="skills"><span>정보의 쉬운 재구성</span><span>질문형 훅 카피</span><span>시리즈 기획</span><span>장별 시각적 일관성</span></div></div>
+    </div>
+    <div class="visual">
+      <div class="tabs" id="setTabs" role="group" aria-label="카드뉴스 세트 선택"></div>
+      <div class="viewer">
+        <span class="badge" id="setBadge" hidden></span>
+        <span class="counter" id="counter">1 / 6</span>
+        <div class="slides" id="slides" tabindex="0" aria-label="카드뉴스 슬라이드"></div>
+      </div>
+      <div class="cnav">
+        <div class="dots" id="dots"></div>
+        <div class="arrows"><button type="button" id="prev" aria-label="이전 장">←</button><button type="button" id="next" aria-label="다음 장">→</button></div>
+      </div>
+      <p class="settitle" id="setNote"></p>
+    </div>
+  </article>
+
+  <!-- 03 -->
+  <article class="work wide" data-type="card" style="--tint:var(--t-mint)">
+    <div class="head">
+      <div>
+        <div class="idx"><span class="mono">03</span><span class="chip">카드뉴스</span><span class="chip">디자인 협업</span><span class="chip state">게시 확인</span></div>
+        <h3>엄마가 직접 말하는 완자 공부력 찐후기</h3>
+        <p class="sub">맘앤톡(비상교육) · 『완자 공부력 사회 교과서 자료 독해 3-1』 · 2026년 10월</p>
+        <p class="goal">실제 구매자의 목소리로 학부모가 공감할 수 있는 후기형 콘텐츠를 기획했습니다. 기획안을 만들어 디자이너에게 넘기고, 최종 게시물까지 확인했습니다. 헤드라인, 키워드 칩, 후기 카드 3개가 기획 그대로 들어갔습니다.</p>
+        <div class="block"><h4>보여주는 역량</h4><div class="skills"><span>실제 고객 후기 큐레이션</span><span>근거 기반 카피</span><span>디자인 핸드오프</span></div></div>
+      </div>
+      <div class="block" style="margin-top:0">
+        <h4>담당한 일</h4>
+        <ul class="tasks">
+          <li>Yes24 구매자 후기를 읽고 발췌 문구 선정</li>
+          <li>핵심 키워드 '첫 사회 공부', '하루 4쪽', '혼자서도 술술' 정리</li>
+          <li>헤드라인과 후기 카드 위계, 별점·작성일·제품 표지 구조 제안</li>
+          <li>라이트 블루 톤과 레퍼런스를 담은 PPT 제작 가이드 작성</li>
+          <li>디자이너 핸드오프 후 실제 게시 결과물 확인</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ba">
+      <figure><img class="zoom" src="img/mt-review-brief.webp" alt="완자 후기 카드뉴스 기획안: 레이아웃 구성과 레퍼런스"><figcaption><b>내 기획안</b> · 레이아웃, 카피, 레퍼런스를 담은 PPT 가이드</figcaption></figure>
+      <span class="to" aria-hidden="true">→</span>
+      <figure><img class="zoom" src="img/mt-review-final.webp" alt="최종 게시물: 엄마가 직접 말하는 완자 공부력 찐후기"><figcaption><b>최종 게시물</b> · 1080 × 1350 · 디자인은 디자이너</figcaption></figure>
+    </div>
+  </article>
+
+  <!-- 03+ -->
+  <article class="work lean rev" data-type="event" style="--tint:var(--t-peach)">
+    <div>
+      <div class="idx"><span class="mono">03+</span><span class="chip">SNS 이벤트</span><span class="chip state">게시·운영</span></div>
+      <h3>가을 숲 속 완공이와 숨은 도토리 찾기</h3>
+      <p class="sub">맘앤톡 9월 팔로우 이벤트 · 2026.09.23 – 09.30</p>
+      <p class="goal">가을 시즌 요소와 브랜드 캐릭터를 결합해, 그림을 보는 것만으로 참여하고 싶어지는 팔로우 이벤트를 기획했습니다. 그림 속 도토리 개수를 댓글로 맞히는 단순한 참여 구조로 문턱을 낮췄습니다.</p>
+      <div class="block"><h4>담당한 일</h4>
+        <ul class="tasks">
+          <li>숨은 도토리 찾기 콘셉트와 참여 방식, 2장 구성 기획</li>
+          <li>가을 숲길 배경, 크기·위치가 다른 도토리, 돋보기 든 캐릭터 연출 지시</li>
+          <li>헤드라인·경품 안내 카피와 레이아웃 레퍼런스를 담은 제작 가이드 작성</li>
+          <li>경품·기간·당첨자 발표 등 운영 조건을 콘텐츠에 반영</li>
+        </ul>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><b>50명</b><span>다이소 5,000원 모바일 상품권</span></div>
+        <div class="kpi"><b>2장</b><span>1080 × 1350 캐러셀</span></div>
+      </div>
+      <div class="block"><h4>보여주는 역량</h4><div class="skills"><span>참여 유도형 이벤트 기획</span><span>캐릭터 활용</span><span>디자이너 협업</span></div></div>
+    </div>
+    <div class="visual">
+      <div class="toggle" role="group" aria-label="기획안과 게시물 전환" data-target="acStack">
+        <button type="button" id="ac-a" aria-pressed="true" data-i="0">기획안 1</button>
+        <button type="button" id="ac-b" aria-pressed="false" data-i="1">기획안 2</button>
+        <button type="button" id="ac-c" aria-pressed="false" data-i="2">게시물 1</button>
+        <button type="button" id="ac-d" aria-pressed="false" data-i="3">게시물 2</button>
+      </div>
+      <div class="stack" id="acStack">
+        <figure><img class="zoom" src="img/mt-brief-01.webp" alt="도토리 이벤트 기획안 1장: 디자인 제작 가이드"></figure>
+        <figure class="off"><img class="zoom" src="img/mt-brief-02.webp" alt="도토리 이벤트 기획안 2장: 참여 방법과 경품 안내"></figure>
+        <figure class="off"><img class="zoom tall" src="img/mt-final-01.webp" alt="게시물 1장: 그림에 숨겨진 도토리는 총 몇 개일까요?"></figure>
+        <figure class="off"><img class="zoom tall" src="img/mt-final-02.webp" alt="게시물 2장: 참여 방법, 기간, 경품"></figure>
+      </div>
+      <p class="vcap">기획안(9.17) → 게시물(9.23) · 최종 일러스트는 디자인팀 제작</p>
+    </div>
+  </article>
+  <div class="play" data-type="event">
+    <div>
+      <span class="eyebrow">Play</span>
+      <h4>직접 찾아보세요</h4>
+      <p>이벤트의 재미 구조를 그대로 옮겨 놨어요. 실제 게시물의 정답처럼 낙엽 사이에 도토리 5개가 숨어 있어요.</p>
+    </div>
+    <div class="forest" id="forest" aria-label="숨은 도토리 찾기 미니게임">
+      <div class="hud"><span>찾은 도토리 <b id="cnt">0</b> / 5</span><button type="button" id="reset">다시 숨기기</button></div>
+      <div class="win" id="win">다 찾았어요! 실제 이벤트에선 팔로우하고 개수를 댓글로 남기면 응모 완료.</div>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <article class="work" data-type="event" style="--tint:var(--t-butter)">
+    <div>
+      <div class="idx"><span class="mono">04</span><span class="chip">온·오프라인</span><span class="chip">손그림 사인</span><span class="chip state">행사 완료</span></div>
+      <h3>광주 ACC 북마켓, 게시물에서 현장 대화까지</h3>
+      <p class="sub">이은북 38번 부스 · 책 읽는 ACC · 2026년 9월</p>
+      <p class="goal">행사 전에는 카드뉴스로 방문 정보를 알리고, 행사장에서는 방문객의 관심사에 맞춰 도서를 직접 안내했습니다. 부스에 걸 고양이 일러스트와 손글씨 상품 사인도 직접 그렸습니다.</p>
+      <div class="kpis">
+        <div class="kpi hot"><b>120권</b><span>대표 도서 완판</span></div>
+        <div class="kpi"><b>1,160</b><span>사전 홍보 4개 조회 합</span></div>
+        <div class="kpi"><b>476</b><span>후기 릴스 조회</span></div>
+        <div class="kpi"><b>46</b><span>후기 릴스 반응</span></div>
+      </div>
+      <p class="fine">120권 완판은 부스 팀 전체 성과. 1,160은 게시물 4개 조회수 합산이며 순 도달 수와 다름.</p>
+      <div class="tl">
+        <div class="pt"><span class="when">행사 전 · ONLINE</span><b>홍보 카드뉴스 4종 제작</b>행사 소개, 프로그램·체험, 38번 부스, 참여 도서</div>
+        <div class="pt"><span class="when">준비 · DRAW</span><b>고양이 일러스트와 손글씨 사인 제작</b>책과 키링을 소개하는 작은 그림 사인</div>
+        <div class="pt live"><span class="when">첫날 · OFFLINE</span><b>처음 만나는 방문객에게 먼저 다가가 안내</b>관심 상품과 반응을 보고 관련 도서로 연결</div>
+      </div>
+    </div>
+    <div class="visual">
+      <div class="mosaic">
+        <figure class="m1" style="margin:0"><img class="zoom" src="img/acc-photo-1.webp" alt="책 읽는 ACC 이은북 38번 부스 전경"><figcaption>38번 부스</figcaption></figure>
+        <figure class="m2" style="margin:0"><video src="vid/acc-clip-1.mp4" poster="vid/acc-clip-1.jpg" muted loop playsinline autoplay aria-label="부스 현장 영상"></video><figcaption>현장 클립</figcaption></figure>
+        <figure class="m3" style="margin:0"><img class="zoom" src="img/acc-photo-2.webp" alt="바다생물도감 등 도서 진열"></figure>
+        <figure class="m4" style="margin:0"><img class="zoom" src="img/acc-sign-3.webp" alt="직접 그린 손그림 상품 사인"><figcaption>손그림 사인</figcaption></figure>
+        <figure class="m5" style="margin:0"><img class="zoom" src="img/acc-sign-4.webp" alt="고양이 일러스트 사인"></figure>
+        <figure class="m6" style="margin:0"><img class="zoom" src="img/acc-sign-1.webp" alt="캐릭터 손글씨 사인"></figure>
+        <figure class="m7" style="margin:0"><video src="vid/acc-clip-3.mp4" poster="vid/acc-clip-3.jpg" muted loop playsinline autoplay aria-label="부스 진열 영상"></video></figure>
+      </div>
+      <p class="vcap">현장 사진·영상 원본 · 사진을 눌러 크게 보기</p>
+    </div>
+  </article>
+
+  <!-- 05 -->
+  <div class="compact" data-type="short">
+    <div>
+      <div class="idx"><span class="mono">05</span><span class="chip">숏폼</span><span class="chip state">3편 게시</span></div>
+      <h3>정보바이트, AI를 60초 안에</h3>
+      <p class="goal">AI·기술 주제 쇼츠를 조사, 대본, 편집, 게시까지 맡아 3편을 올렸고, 캔바 AI·캡컷 활용 릴스 등 4편을 추가로 기획했습니다. 만들면서 정적인 화면에 카메라 움직임을 넣고, 첫 문장을 제품명 대신 시청자에게 왜 중요한지로 바꿨습니다.</p>
+      <div class="links"><a href="https://www.youtube.com/@%EC%A0%95%EB%B3%B4%EB%B0%94%EC%9D%B4%ED%8A%B8/shorts" target="_blank" rel="noopener">정보바이트 채널 보기 ↗</a></div>
+      <p class="fine" style="margin-top:18px">같이 맡은 운영 업무: 경제사회노동위원회 설문 응모 1,098건 검수(유효 1,036건)와 추첨, K-Book 도서 50종 영문 정보 등록, 맘앤톡 이벤트 당첨자 선정, 체험단·인플루언서 후보 조사.</p>
+    </div>
+    <div>
+      <div class="hook" style="margin-top:0">
+        <div class="before"><small>BEFORE · 첫 문장</small>새로 나온 제품명부터 소개</div>
+        <span class="arrow" aria-hidden="true">→</span>
+        <div class="after"><small>AFTER · 실제 제목</small>"인간을 대체하는 AI, 본격 등장하다! 오픈AI 아스트라"</div>
+      </div>
+      <div class="vids">
+        <a href="https://www.youtube.com/shorts/XcL5GUne8XA" target="_blank" rel="noopener"><b>88</b><span>Short 01 조회 ↗</span></a>
+        <a href="https://youtube.com/shorts/h24j5avpsdM" target="_blank" rel="noopener"><b>59</b><span>Short 02 조회 ↗</span></a>
+        <a href="https://youtube.com/shorts/heIvggcMc5s" target="_blank" rel="noopener"><b>38</b><span>Short 03 조회 ↗</span></a>
+      </div>
+      <p class="fine">YouTube Studio, 2026.10.14 기준.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="process">
+  <div class="section-head"><div><div class="eyebrow">How I Work</div><h2>콘텐츠 한 편이 나가기까지</h2></div></div>
+  <div class="process">
+    <div class="step"><span class="no">STEP 1</span><b>독자 훅 찾기</b><p>책의 핵심을 플랫폼에 맞는 질문과 문구로 재구성</p></div>
+    <div class="step"><span class="no">STEP 2</span><b>레퍼런스</b><p>브랜드와 도서 분위기에 맞는 디자인 레퍼런스 탐색</p></div>
+    <div class="step"><span class="no">STEP 3</span><b>장별 구조</b><p>시선을 끄는 표지, 정보 카드, 책 소개와 행동 유도</p></div>
+    <div class="step"><span class="no">STEP 4</span><b>가이드</b><p>디자이너에게 화면 예시와 구체적 제작 가이드 전달</p></div>
+    <div class="step"><span class="no">STEP 5</span><b>피드백 반영</b><p>가독성·구성·메시지 명확성을 피드백에 맞춰 수정</p></div>
+    <div class="step"><span class="no">STEP 6</span><b>숫자로 돌아보기</b><p>게시 후 조회·시청 지표를 날짜와 함께 기록</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="about">
+  <div class="section-head"><div><div class="eyebrow">About</div><h2>콘텐츠를 실행하는 기획자</h2></div></div>
+  <div class="about">
+    <div>
+      <p class="big">영문학과 응용통계학을 함께 공부했습니다. 그래서 메시지가 어떻게 들리는지와, 그 메시지가 실제로 닿았는지를 같이 봅니다. 디자이너와 일할 때는 기획 의도와 함께 화면 예시를 건넸고, 북마켓 현장에서는 고객의 관심을 읽고 책을 권했습니다.</p>
+      <div class="bg-strip"><span>중앙대 영어영문 · 응용통계 복수전공</span><span>Université de Montréal 교환</span><span>Tamwood 디지털 마케팅 인턴</span><span>이은콘텐츠 콘텐츠 마케팅 인턴 (2026.09 – )</span></div>
+    </div>
+    <div class="comp">
+      <div><b>SNS CONTENT PLANNING</b><p>타깃 관점의 메시지 설계, 카드별 스토리 구성, 키워드·카피 작성</p></div>
+      <div><b>SHORT-FORM PRODUCTION</b><p>영상 아이디어 발굴, 캐릭터 활용, 숏폼 연출과 자막, 편집·게시</p></div>
+      <div><b>CREATIVE COLLABORATION</b><p>레퍼런스 조사, PPT 기획안, 디자이너 핸드오프와 최종물 확인</p></div>
+      <div><b>BRAND &amp; COMMUNITY</b><p>참여를 이끄는 SNS 이벤트, 현장 고객 응대, 손그림 사인 제작</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div><div class="eyebrow">Contact</div><h2>다음 콘텐츠를 함께 만들고 싶어요</h2></div>
+    <div class="contact">
+      <div class="mail"><code id="mailText">inha2979@gmail.com</code><button type="button" id="copyMail">복사</button></div>
+      <div class="row">
+        <a href="https://www.linkedin.com/in/in-ha-kim" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/inha2979" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://inha2979.github.io/inha-portfolio/Inha_Kim_Resume.pdf" target="_blank" rel="noopener">이력서 ↗</a>
+        <a href="https://inha2979.github.io/inha-portfolio/" target="_blank" rel="noopener">전체 포트폴리오 ↗</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden><img id="lbImg" alt=""><button type="button" id="lbClose" aria-label="닫기">✕</button></div>
+
+<script>
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* hero fan */
+  const cards=[...document.querySelectorAll('.stage .feed')];
+  const pos=['translate(-100%,-56%) rotate(-9deg)','translate(-68%,-52%) rotate(-3deg)','translate(-36%,-48%) rotate(4deg)','translate(-6%,-44%) rotate(10deg)'];
+  if(matchMedia('(max-width:520px)').matches)pos.splice(0,4,'translate(-95%,-60%) rotate(-8deg)','translate(-68%,-56%) rotate(-3deg)','translate(-42%,-52%) rotate(3deg)','translate(-16%,-48%) rotate(8deg)');
+  let order=[0,1,2,3];
+  const lay=()=>order.forEach((c,i)=>{cards[c].style.transform=pos[i];cards[c].style.zIndex=i+1});
+  lay();
+  if(!reduce)setInterval(()=>{order.unshift(order.pop());lay()},2600);
+  const stage=document.getElementById('stage');
+  stage.addEventListener('pointermove',e=>{if(reduce)return;const r=stage.getBoundingClientRect();
+    stage.style.transform=`rotateY(${((e.clientX-r.left)/r.width-.5)*8}deg) rotateX(${-((e.clientY-r.top)/r.height-.5)*8}deg)`});
+  stage.addEventListener('pointerleave',()=>stage.style.transform='');
+
+  /* bubbles */
+  document.querySelectorAll('.sea').forEach(sea=>{for(let i=0;i<7;i++){const b=document.createElement('i');b.className='bubble';
+    const s=4+Math.random()*9;b.style.width=b.style.height=s+'px';b.style.left=(Math.random()*90)+'%';
+    b.style.animationDuration=(4+Math.random()*4)+'s';b.style.animationDelay=(-Math.random()*6)+'s';sea.appendChild(b)}});
+
+  /* count-up (final values already in markup) */
+  document.querySelectorAll('[data-to]').forEach(el=>{
+    if(reduce)return;const to=+el.dataset.to,dec=+(el.dataset.dec||0),suf=el.querySelector('small')?.outerHTML||'';
+    const fmt=v=>(dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US'))+suf;
+    const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;io.disconnect();const t0=performance.now();
+      const tick=t=>{const p=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-p,3);el.innerHTML=fmt(to*e);if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)});
+    io.observe(el)});
+
+  /* filters */
+  const fbtns=[...document.querySelectorAll('.filters button')],items=[...document.querySelectorAll('#works [data-type]')];
+  fbtns.forEach(b=>b.addEventListener('click',()=>{fbtns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+    items.forEach(it=>{it.hidden=!(b.dataset.f==='all'||it.dataset.type===b.dataset.f)})}));
+
+  /* shorts */
+  const shorts=[
+    {v:'short-bukangi',d:'0:30',name:'『바다생물도감』 · 부캉이가 집에 안 가는 이유',
+     k:[['≈1.1K','조회수',1],['101.3%','평균 시청 비율',0],['2위','채널 최근 쇼츠 10개 중',0],['12 · 2','좋아요 · 댓글',0]],
+     fine:'YouTube Studio, 2026.10.21 기준(게시 후 약 21시간). 초기 수치라 이후 달라질 수 있음.',url:'https://youtube.com/shorts/mu23QPKGyzs'},
+    {v:'short-hamster',d:'0:32',name:'『작은생물도감』 · 더 말랑콩떡한 생명체들',
+     k:[['405','조회수',1],['82','유효 조회수',0],['48','순 시청자',0],['0:31','평균 시청 지속 시간',0]],
+     fine:'YouTube Studio, 2026.10.22 기준(10.19 게시). 구독자 +1.',url:'https://youtube.com/shorts/osyAvozEjjQ'},
+    {v:'short-prairie',d:'0:13',name:'『작은생물도감』 · 복작복작 프레리도그 하우스',
+     k:[['13초','짧은 루프형 구성',0],['1장면','캐릭터 군무 → 책 연결',0]],
+     fine:'제작 완료 · YouTube Shorts 게시 예정.',url:''}];
+  const vid=document.getElementById('shortVid'),stabs=[...document.querySelectorAll('#shortTabs button')],sk=document.getElementById('shortKpis'),
+        sn=document.getElementById('shortName'),sf=document.getElementById('shortFine'),slk=document.getElementById('shortLink'),srec=document.getElementById('shortRec'),
+        snd=document.getElementById('soundBtn');
+  function pickShort(i){const s=shorts[i];stabs.forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
+    vid.poster='vid/'+s.v+'.jpg';vid.src='vid/'+s.v+'.mp4';vid.play().catch(()=>{});srec.textContent='● '+s.d;
+    sn.textContent=s.name;sf.textContent=s.fine;
+    sk.innerHTML=s.k.map(([b,t,h])=>`<div class="kpi${h?' hot':''}"><b>${b}</b><span>${t}</span></div>`).join('');
+    slk.innerHTML=s.url?`<a href="${s.url}" target="_blank" rel="noopener">YouTube Shorts 보기 ↗</a>`:''}
+  stabs.forEach(b=>b.addEventListener('click',()=>pickShort(+b.dataset.i)));
+  snd.addEventListener('click',()=>{vid.muted=!vid.muted;if(!vid.muted)vid.play().catch(()=>{});snd.textContent=vid.muted?'🔈 소리 켜기':'🔇 소리 끄기'});
+  pickShort(0);
+
+  /* card news viewer */
+  const sets=[
+    {k:'jaksaengdo-halloween',n:6,t:'작은생물도감 · 할로윈',note:'『작은생물도감』 × 할로윈 · 시즌 이슈에 책 속 동물 친구들을 한 장씩 소개'},
+    {k:'basaengdo-pepero',n:6,t:'바다생물도감 · 빼빼로데이',note:'『바다생물도감』 × 빼빼로데이 · 11월 11일에 바다 친구들이 준비한 선물'},
+    {k:'hiking-01',n:6,t:'등산 1편',note:'『대체 등산은 왜 하는 건데』 · 제목 자체를 질문형 훅으로',views:'206 조회'},
+    {k:'hiking-02',n:8,t:'등산 2편',note:'등산 2편 · 산에 가기 싫은 아이와 함께 가는 법으로 독자 확장'},
+    {k:'ai-ad-01',n:6,t:'AI 광고 · 영상',note:'『AI 광고 콘텐츠 제작법』 · AI 영상, 그냥 만들고 있나요?',views:'191 조회'},
+    {k:'ai-ad-02',n:6,t:'AI 광고 · 기획',note:'『AI 광고 콘텐츠 제작법』 · 첫 화면 앞에서 막막한 마케터에게'},
+    {k:'ai-safety-01',n:6,t:'AI 안전 1편',note:'AI 안전 1편 · 빨라지는 AI, 브레이크는?'},
+    {k:'ai-safety-02',n:6,t:'AI 안전 2편',note:'AI 안전 2편 · 클립 하나로 설명하는 AI 정렬 문제'},
+    {k:'chuseok',n:7,t:'추석 추천',note:'추석 연휴 도서 추천 · 시즌 무드로 여러 권을 한 번에'}];
+  const tabs=document.getElementById('setTabs'),sl=document.getElementById('slides'),dots=document.getElementById('dots'),
+        counter=document.getElementById('counter'),badge=document.getElementById('setBadge'),note=document.getElementById('setNote');
+  let si=0,ci=0;
+  sets.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.id='set-'+s.k;b.textContent=s.t;b.setAttribute('aria-pressed',i===0);
+    b.addEventListener('click',()=>load(i));tabs.appendChild(b)});
+  function src(s,j){const nn=String(j+1).padStart(2,'0');return s.k==='chuseok'?`img/cn-chuseok-${nn}.webp`:`img/cn-${s.k}-${nn}.webp`}
+  function load(i){si=i;ci=0;const s=sets[i];
+    [...tabs.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
+    sl.innerHTML='';dots.innerHTML='';
+    for(let j=0;j<s.n;j++){const im=document.createElement('img');im.src=src(s,j);im.alt=`${s.t} ${j+1}장`;im.className='zoom';if(j>1)im.loading='lazy';sl.appendChild(im);
+      const d=document.createElement('button');d.type='button';d.setAttribute('aria-label',(j+1)+'장');d.addEventListener('click',()=>go(j));dots.appendChild(d)}
+    sl.scrollLeft=0;badge.hidden=!s.views;badge.textContent=s.views?'인스타그램 '+s.views:'';note.textContent=s.note;mark()}
+  function go(j){const n=sets[si].n;ci=(j+n)%n;sl.scrollTo({left:sl.children[ci].offsetLeft-sl.offsetLeft,behavior:reduce?'auto':'smooth'});mark()}
+  function mark(){[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===ci));counter.textContent=(ci+1)+' / '+sets[si].n}
+  sl.addEventListener('scroll',()=>{const w=sl.children[0]?.offsetWidth+12||1;const i=Math.round(sl.scrollLeft/w);if(i!==ci){ci=i;mark()}},{passive:true});
+  document.getElementById('prev').onclick=()=>go(ci-1);
+  document.getElementById('next').onclick=()=>go(ci+1);
+  sl.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(ci+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(ci-1)}});
+  load(0);
+
+  /* before/after toggles */
+  document.querySelectorAll('.toggle').forEach(t=>{const st=document.getElementById(t.dataset.target),bs=[...t.querySelectorAll('button')],fs=[...st.children];
+    bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.setAttribute('aria-pressed',x===b));fs.forEach((f,k)=>f.classList.toggle('off',k!=b.dataset.i))}))});
+
+  /* acorn game: 5 acorns, like the real post */
+  const forest=document.getElementById('forest'),cnt=document.getElementById('cnt'),win=document.getElementById('win');
+  const rnd=seed=>()=>{seed=(seed*16807)%2147483647;return(seed-1)/2147483646};
+  let r=rnd(11);
+  function build(){forest.querySelectorAll('.leaf,.acorn').forEach(n=>n.remove());let found=0;cnt.textContent=0;win.classList.remove('show');
+    const spots=[];while(spots.length<5){const p=[6+r()*86,22+r()*66];if(spots.every(([x,y])=>Math.hypot(x-p[0],y-p[1])>14))spots.push(p)}
+    spots.forEach(([x,y])=>{const a=document.createElement('button');a.type='button';a.className='acorn';a.setAttribute('aria-label','도토리');
+      a.style.left=x+'%';a.style.top=y+'%';a.style.transform=`rotate(${(r()-.5)*70}deg) scale(${.75+r()*.45})`;
+      a.addEventListener('click',()=>{if(a.classList.contains('found'))return;a.classList.add('found');found++;cnt.textContent=found;if(found===5)win.classList.add('show')});
+      forest.appendChild(a)});
+    const cols=['--leaf1','--leaf2','--leaf3'];
+    for(let i=0;i<110;i++){const x=r()*97,y=12+r()*86;if(spots.some(([sx,sy])=>Math.abs(sx-x)<3.5&&Math.abs(sy-y)<4.5))continue;
+      const l=document.createElement('i');l.className='leaf';l.style.left=x+'%';l.style.top=y+'%';l.style.background=`var(${cols[i%3]})`;
+      l.style.transform=`rotate(${r()*360}deg) scale(${.7+r()*.8})`;l.style.zIndex=r()<.3?3:1;forest.appendChild(l)}}
+  build();
+  document.getElementById('reset').addEventListener('click',()=>{r=rnd(Math.floor(Math.random()*99999)+1);build()});
+
+  /* lightbox */
+  const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+  document.addEventListener('click',e=>{const im=e.target.closest('img.zoom');if(!im)return;lbImg.src=im.currentSrc||im.src;lbImg.alt=im.alt;lb.hidden=false;document.getElementById('lbClose').focus()});
+  const close=()=>{lb.hidden=true};lb.addEventListener('click',close);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!lb.hidden)close()});
+
+  /* copy email */
+  const cb=document.getElementById('copyMail');
+  cb.addEventListener('click',()=>{const t=document.getElementById('mailText').textContent;
+    const done=()=>{cb.textContent='복사됨';setTimeout(()=>cb.textContent='복사',1600)};
+    const fallback=()=>{const s=getSelection(),rg=document.createRange();rg.selectNodeContents(document.getElementById('mailText'));s.removeAllRanges();s.addRange(rg);cb.textContent='선택됨'};
+    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(_){fallback()}});
+
+  /* nav active */
+  const links=[...document.querySelectorAll('.nav ul a')];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+  ['works','process','about','contact'].forEach(id=>io.observe(document.getElementById(id)));
+})();
+</script>
+</body>
+</html>
