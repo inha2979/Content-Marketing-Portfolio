@@ -811,7 +811,11 @@ footer h2{font-size:clamp(26px,3.4vw,40px);font-weight:800}
     setCnt();pickShort(curShort);sndLabel();setTabLabels();load(si);
     try{localStorage.setItem('lang',l)}catch(_){}}
   langBtn.addEventListener('click',()=>setLang(LANG==='en'?'ko':'en'));
-  let start='ko';try{start=localStorage.getItem('lang')||'ko'}catch(_){}
+  /* first-load language: link (?lang=en / #en) > saved choice > browser language (non-Korean -> English) */
+  let start=null;try{start=localStorage.getItem('lang')}catch(_){}
+  if(!start){const bl=(navigator.language||'ko').toLowerCase();start=bl.startsWith('ko')?'ko':'en'}
+  const qp=new URLSearchParams(location.search).get('lang');
+  if(qp==='en'||qp==='ko')start=qp;
   if(location.hash==='#en')start='en';
   if(start==='en')setLang('en');
 
